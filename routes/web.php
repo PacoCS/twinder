@@ -55,8 +55,7 @@ Route::post('/newPost', function(Request $request){
 
 
 Route::get('/posts', function () {
-    $posts = App\Post::all();
-    return view('post_list', ['posts'=>$posts]);
+
 });
 
 
@@ -71,3 +70,6 @@ Route::get('/posts/date', function () {
 
 Auth::routes();
 Route::get('/home','HomeController@index')->name('home');
+
+
+Route::resource('/post', 'PostController');
